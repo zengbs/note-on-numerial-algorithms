@@ -6,7 +6,6 @@ from scipy.fft import fft
 
 # Creating a 3x2 subplot structure
 fig, axs = plt.subplots(5, 2, figsize=(12, 16))
-#plt.subplots_adjust(hspace=10, wspace=10)
 
 # Sample rate and duration
 N = 8.0/32  # Hz
@@ -113,6 +112,7 @@ axs[4, 0].set_ylabel("$s$")
 axs[4, 0].set_xlim(tmin, tmax)
 
 axs[4, 1].plot(freq, np.abs(fft_original), linestyle="-", color='red', marker='o', label='line with marker', ms=3)
+axs[4, 1].set_title(r"Frequency Domain ($f=20/32$)")
 axs[4, 1].set_xlabel("Frequency ($f=20/32$)")
 axs[4, 1].set_ylabel(r"$|F(s)|$")
 axs[4, 1].set_xlim(min(freq), max(freq))
