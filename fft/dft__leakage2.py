@@ -113,7 +113,7 @@ axs[4, 0].set_xlim(tmin, tmax)
 
 axs[4, 1].plot(freq, np.abs(fft_original), linestyle="-", color='red', marker='o', label='line with marker', ms=3)
 axs[4, 1].set_title(r"Frequency Domain ($f=20/32$)")
-axs[4, 1].set_xlabel("Frequency ($f=20/32$)")
+axs[4, 1].set_xlabel("Frequency")
 axs[4, 1].set_ylabel(r"$|F(s)|$")
 axs[4, 1].set_xlim(min(freq), max(freq))
 axs[4, 1].set_yscale('log')
