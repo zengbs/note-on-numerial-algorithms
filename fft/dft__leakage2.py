@@ -6,6 +6,7 @@ from scipy.fft import fft
 
 # Creating a 3x2 subplot structure
 fig, axs = plt.subplots(5, 2, figsize=(12, 16))
+#plt.subplots_adjust(hspace=10, wspace=10)
 
 # Sample rate and duration
 N = 8.0/32  # Hz
@@ -27,12 +28,12 @@ fft_original = fft(original_signal)
 
 # Plotting the original signal in time and frequency domain
 axs[0, 0].plot(t, original_signal, linestyle="-", color='blue', marker='o', label='line with marker', ms=3)
-axs[0, 0].set_title("Original Signal (Time Domain)")
+axs[0, 0].set_title(r"Time Domain ($f=1/2$)")
 axs[0, 0].set_ylabel("$s$")
 axs[0, 0].set_xlim(tmin, tmax)
 
 axs[0, 1].plot(freq, np.abs(fft_original), linestyle="-", color='red', marker='o', label='line with marker', ms=3)
-axs[0, 1].set_title("Original Signal (Frequency Domain)")
+axs[0, 1].set_title(r"Frequency Domain ($f=1/2$)")
 axs[0, 1].set_ylabel(r"$|F(s)|$")
 axs[0, 1].set_xlim(min(freq), max(freq))
 axs[0, 1].set_yscale('log')
@@ -46,10 +47,12 @@ fft_original = fft(original_signal)
 
 # Plotting the the signal in time and frequency domain
 axs[1, 0].plot(t, original_signal, linestyle="-", color='blue', marker='o', label='line with marker', ms=3)
+axs[1, 0].set_title(r"Time Domain ($f=17/32$)")
 axs[1, 0].set_ylabel("$s$")
 axs[1, 0].set_xlim(tmin, tmax)
 
 axs[1, 1].plot(freq, np.abs(fft_original), linestyle="-", color='red', marker='o', label='line with marker', ms=3)
+axs[1, 1].set_title(r"Frequency Domain ($f=17/32$)")
 axs[1, 1].set_ylabel(r"$|F(s)|$")
 axs[1, 1].set_xlim(min(freq), max(freq))
 axs[1, 1].set_yscale('log')
@@ -64,10 +67,12 @@ fft_original = fft(original_signal)
 
 # Plotting the windowed signal in time and frequency domain
 axs[2, 0].plot(t, original_signal, linestyle="-", color='blue', marker='o', label='line with marker', ms=3)
+axs[2, 0].set_title(r"Time Domain ($f=18/32$)")
 axs[2, 0].set_ylabel("$s$")
 axs[2, 0].set_xlim(tmin, tmax)
 
 axs[2, 1].plot(freq, np.abs(fft_original), linestyle="-", color='red', marker='o', label='line with marker', ms=3)
+axs[2, 1].set_title(r"Frequency Domain ($f=18/32$)")
 axs[2, 1].set_ylabel(r"$|F(s)|$")
 axs[2, 1].set_xlim(min(freq), max(freq))
 axs[2, 1].set_yscale('log')
@@ -82,10 +87,12 @@ fft_original = fft(original_signal)
 
 # Plotting the windowed signal in time and frequency domain
 axs[3, 0].plot(t, original_signal, linestyle="-", color='blue', marker='o', label='line with marker', ms=3)
+axs[3, 0].set_title(r"Time Domain ($f=19/32$)")
 axs[3, 0].set_ylabel("$s$")
 axs[3, 0].set_xlim(tmin, tmax)
 
 axs[3, 1].plot(freq, np.abs(fft_original), linestyle="-", color='red', marker='o', label='line with marker', ms=3)
+axs[3, 1].set_title(r"Frequency Domain ($f=19/32$)")
 axs[3, 1].set_ylabel(r"$|F(s)|$")
 axs[3, 1].set_xlim(min(freq), max(freq))
 axs[3, 1].set_yscale('log')
@@ -100,12 +107,13 @@ fft_original = fft(original_signal)
 
 # Plotting the windowed signal in time and frequency domain
 axs[4, 0].plot(t, original_signal, linestyle="-", color='blue', marker='o', label='line with marker', ms=3)
+axs[4, 0].set_title(r"Time Domain ($f=20/32$)")
 axs[4, 0].set_xlabel("Time")
 axs[4, 0].set_ylabel("$s$")
 axs[4, 0].set_xlim(tmin, tmax)
 
 axs[4, 1].plot(freq, np.abs(fft_original), linestyle="-", color='red', marker='o', label='line with marker', ms=3)
-axs[4, 1].set_xlabel("Frequency")
+axs[4, 1].set_xlabel("Frequency ($f=20/32$)")
 axs[4, 1].set_ylabel(r"$|F(s)|$")
 axs[4, 1].set_xlim(min(freq), max(freq))
 axs[4, 1].set_yscale('log')
